@@ -22,7 +22,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container px-lg-5">
-        <a class="navbar-brand" href="../home.html">Sphere Animation Lab</a>
+        <a class="navbar-brand" href="../home.html">Arrow Animation Lab</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -92,14 +92,14 @@
           <div class="col">
             <div class="card" style="width: 9rem">
               <img
-                src="../../img/icons/cube.svg"
+                src="../../img/icons/297001.svg"
                 class="card-img-top"
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="card-title text-center">Bounce</h5>
-                <p class="card-text">Make the sphere bounce up and down</p>
-                <a onclick="local_bounceAnimate();" class="btn btn-primary"
+                <h5 class="card-title text-center">Arrow</h5>
+                <p class="card-text">Make the arrow move!</p>
+                <a onclick="local_mobius();" class="btn btn-primary"
                   >Animate!</a
                 >
               </div>
@@ -113,7 +113,7 @@
     <script src="../animation.js"></script>
     <script src="../choice.js"></script>
     <script>
-      var pos = 5;
+      var pos = 25;
       function incr() {
         pos -= 0.1;
         program();
@@ -127,15 +127,15 @@
         colour = document.getElementById("colorpicker").value;
         setColor(colour);
         setPos(pos);
-        choose("1");
+        choose("3");
         justShow();
       }
-      function local_bounceAnimate() {
+      function local_mobius() {
         colour = document.getElementById("colorpicker").value;
         setColor(colour);
         setPos(pos);
-        choose("1");
-        bounceAnimate();
+        choose("3");
+        mobius(Date.now());
       }
     </script>
     <footer class="py-5 bg-dark">
