@@ -10,9 +10,16 @@ var shapeChoice;
 const startTime = Date.now();
 //set scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color( { color: backgroundColour } );
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
 
+function setScene(){
+    
+scene.background = new THREE.Color( { color: backgroundColour } );
+
+console.log("Im here")
 scene.add( new THREE.AmbientLight( 0x505050 ) );
 
 const spotLight = new THREE.SpotLight( 0xffffff );
@@ -40,10 +47,8 @@ dirLight.shadow.camera.bottom = - 1;
 dirLight.shadow.mapSize.width = 1024;
 dirLight.shadow.mapSize.height = 1024;
 scene.add( dirLight );
+}
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
 
 function setPos(pos){
     objectPos = pos
@@ -69,22 +74,42 @@ function choose(shapeChoice){
     console.log(shapeChoice)
     switch (shapeChoice) {
         case '0':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
             object = makeCube(objectColour)
             addScene(object,objectPos)
             break;
         case '1':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
             object = makeSphere(objectColour)
             addScene(object,objectPos)
             break;
         case '2':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
             object = makeMobius(objectColour)
             addScene(object,objectPos)
             break;
         case '3':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
             object = makeArrow(objectColour)
             addScene(object,objectPos)
             break;
         case '4':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
             object = makeHouse(objectColour)
             addScene(object,objectPos)
             break;
