@@ -2,7 +2,7 @@
 
 var rotateX= 0.01
 var rotateY= 0.01
-var backgroundColour=0xffffff;
+var backgroundColour=0x000000;
 var objectColour;
 var objectPos;
 //to choose object
@@ -11,14 +11,21 @@ const startTime = Date.now();
 //set scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-const renderer = new THREE.WebGLRenderer();
+
+const canvas = document.querySelector('#canvas');
+const loader = new THREE.TextureLoader();
+const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+  });
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 const controls = new THREE.OrbitControls ( camera, renderer.domElement );
 
+
 function setScene(){
     
-scene.background = new THREE.Color( { color: backgroundColour } );
+//scene.background = new THREE.Color( { color: backgroundColour } );
 
 console.log("Im here")
 scene.add( new THREE.AmbientLight( 0x505050 ) );
@@ -53,6 +60,14 @@ scene.add( dirLight );
 
 function setPos(pos){
     objectPos = pos
+}
+
+function setBackground(url){
+    bg_url = url
+
+
+const bgTexture = loader.load(bg_url);
+scene.background = bgTexture;
 }
 
 function setColor(color){

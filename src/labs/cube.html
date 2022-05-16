@@ -140,6 +140,7 @@
         </div>
       </div>
     </div>
+    <canvas id="canvas"></canvas>
     <script src="../../js/three.js"></script>
     <script src="../../js/OrbitControls.js"></script>
     <script src="../create.js"></script>
@@ -172,6 +173,7 @@
       }
       function local_rotationXAnimate() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("0");
@@ -179,6 +181,7 @@
       }
       function local_bounceAnimate() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("0");

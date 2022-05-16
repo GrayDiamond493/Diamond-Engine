@@ -27,7 +27,7 @@ function rotationYAnimate() {
 function bounceAnimate() {
     let acceleration = 5;
     let bounce_distance = 6;
-    let bottom_position_y = -2;
+    let bottom_position_y = 1;
     let time_step = 0.015;
     // time_counter is calculated to be the time the ball just reached the top position
     // this is simply calculated with the s = (1/2)gt*t formula, which is the case when ball is dropped from the top position

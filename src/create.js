@@ -1,9 +1,50 @@
 //Migrate to a "create.js" file
 
+function makeFloor(){
+    
+    base=new THREE.BoxGeometry(1, 0.1, 1),
+    whiteTile= new THREE.MeshPhongMaterial({ color: 0x000000, shininess: 150 }),
+    blackTile=new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 150 }),
+
+    floor = new THREE.Group()
+
+    for(let x = -8; x < 8; x++){
+        for(let z = -8; z < 8; z++){
+            if(z%2==false){
+                var cube
+                cube=new THREE.Mesh(base, x % 2 == false ? whiteTile : blackTile);
+            }else{
+                cube=new THREE.Mesh(base, x % 2 == false ? blackTile : whiteTile);
+            }
+            cube.position.set(x,0,z);
+            floor.add(cube)
+        }
+    }
+
+    scene.add(floor);
+}
+
+function makePlane(){
+    const ground = new THREE.Mesh(
+        new THREE.PlaneGeometry(9, 9, 1, 1),
+        new THREE.MeshPhongMaterial({ color: 0x000000, shininess: 150 }),
+        new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 150 })
+    );
+
+    ground.rotation.x = - Math.PI / 2; // rotates X/Y to X/Z
+    ground.receiveShadow = true;
+
+    scene.add(ground);
+}
+
+
 function makeCube(colour) {
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshToonMaterial({ color: colour });
     const cube = new THREE.Mesh(geometry, material);
+    cube.position.y = 1
+    makeFloor();
+
     return cube
 }
 
@@ -12,6 +53,9 @@ function makeSphere(colour) {
     console.log(geometry.toJSON())
     const material = new THREE.MeshLambertMaterial({ color: colour });
     const sphere = new THREE.Mesh(geometry, material);
+    makeFloor();
+    
+
     return sphere
 }
 
@@ -31,6 +75,10 @@ function makeArrow(colour) {
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     console.log(geometry.toJSON())
     const line = new THREE.Line(geometry, material);
+
+    line.position.y = 1
+
+    makeFloor();
     return line
 
 }
@@ -130,6 +178,8 @@ function makeHouse(colour) {
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
     const line = new THREE.Line(geometry, material);
+    line.position.y = 1
+    makeFloor();
     return line
 }
 
@@ -154,16 +204,11 @@ function makeMobius(colour) {
     object = new THREE.Mesh(geometry, material);
     object.castShadow = true;
     camera.position.z = 10;
+    object.position.y = 1
     scene.add(object);
+    
 
-    const ground = new THREE.Mesh(
-        new THREE.PlaneGeometry(9, 9, 1, 1),
-        new THREE.MeshPhongMaterial({ color: 0x00ff00, shininess: 150 })
-    );
-
-    ground.rotation.x = - Math.PI / 2; // rotates X/Y to X/Z
-    ground.receiveShadow = true;
-    scene.add(ground);
+    makeFloor();
     return object
 }
 

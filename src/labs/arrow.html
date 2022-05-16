@@ -108,6 +108,7 @@
         </div>
       </div>
     </div>
+    <canvas id="canvas"></canvas>
     <script src="../../js/three.js"></script>
     <script src="../../js/OrbitControls.js"></script>
     <script src="../create.js"></script>
@@ -126,6 +127,7 @@
       }
       function program() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("3");
@@ -133,6 +135,7 @@
       }
       function local_mobius() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("3");

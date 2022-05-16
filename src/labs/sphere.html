@@ -88,6 +88,7 @@
           </button>
         </div>
         </div>
+        </div>
         <div class="row align-items-center">
           <div class="col">
             <div class="card" style="width: 9rem">
@@ -108,6 +109,7 @@
         </div>
       </div>
     </div>
+    <canvas id="canvas"></canvas>
     <script src="../../js/three.js"></script>
     <script src="../../js/OrbitControls.js"></script>
     <script src="../create.js"></script>
@@ -126,6 +128,7 @@
       }
       function program() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("1");
@@ -133,17 +136,20 @@
       }
       function local_bounceAnimate() {
         colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
         setColor(colour);
         setPos(pos);
         choose("1");
         bounceAnimate();
       }
     </script>
+    
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">
           Copyright &copy; Diamond Engine 2022
         </p>
+        </div>>
       </div>
     </footer>
   </body>
