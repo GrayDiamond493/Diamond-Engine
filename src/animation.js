@@ -53,7 +53,31 @@ function bounceAnimate() {
     animate();
 };
 
-
+function exportAnimation(){
+    const exporter = new THREE.GLTFExporter();
+    exporter.parse(
+      scene,
+      function (result) {
+        saveArrayBuffer(result, 'scene.glb');
+      },
+      { binary: true }
+    );
+}
+function saveArrayBuffer(buffer, filename) {
+    save(new Blob([buffer], { type: 'application/octet-stream' }), filename);
+}
+  
+  const link = document.createElement('a');
+  link.style.display = 'none';
+  document.body.appendChild(link); // Firefox workaround, see #6594
+  
+function save(blob, filename) {
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+  
+    // URL.revokeObjectURL( url ); breaks Firefox...
+}
 
 function mobius(startTime) {
     const animate = () => {

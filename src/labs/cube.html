@@ -87,6 +87,16 @@
             animation)
           </button>
         </div>
+        <div class="col">
+          <button
+            id="choice"
+            onclick="local_export()"
+            type="button"
+            class="btn btn-labeled btn-warning"
+          >
+            <span class="btn-label"><i class="fa fa-download"></i></span>Download
+          </button>
+        </div>
         </div>
         <div class="row align-items-center">
           <div class="col">
@@ -143,11 +153,15 @@
     <canvas id="canvas"></canvas>
     <script src="../../js/three.js"></script>
     <script src="../../js/OrbitControls.js"></script>
+    <script src="../../js/GLTFExporter.js"></script>
     <script src="../create.js"></script>
     <script src="../animation.js"></script>
     <script src="../choice.js"></script>
     <script>
       var pos = 3;
+      function local_export(){
+        exportAnimation()
+      }
       function incr() {
         pos -= 0.1;
         program();

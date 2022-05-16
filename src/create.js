@@ -54,7 +54,7 @@ function makeSphere(colour) {
     const material = new THREE.MeshLambertMaterial({ color: colour });
     const sphere = new THREE.Mesh(geometry, material);
     makeFloor();
-    
+    sphere.position.y = 1
 
     return sphere
 }
@@ -204,7 +204,7 @@ function makeMobius(colour) {
     object = new THREE.Mesh(geometry, material);
     object.castShadow = true;
     camera.position.z = 10;
-    object.position.y = 1
+    object.position.y = 0
     scene.add(object);
     
 
