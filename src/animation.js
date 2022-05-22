@@ -1,28 +1,96 @@
+var lastframe = 0;
+var actualframe = 0;
+var grabar = null;
+var empezar = null;
+var framedif = 0;
+function record(begin) {
+    grabar = begin;
+    empezar = begin;
+}
 
 function justShow() {
+    actualframe = renderer.info.render.frame;
+    if (empezar === true){
+        lastframe = renderer.info.render.frame;
+        console.log( lastframe );
+        capture.start();
+        console.log("emepzo la captura")
+        empezar = null;
+    } 
     object.rotation.x = 0.5
     object.rotation.y = 0.5
     renderer.render(scene, camera);
+    //65 mas o menos = 1 Segundo, 650=10s
+    if (grabar === true){
+        framedif = actualframe - lastframe;
+        if ( framedif < 350){
+            capture.capture(canvas);
+            //console.log("frame actual" )
+            console.log( framedif );
+        } else if (framedif === 350){
+            capture.save();
+            capture.stop();
+            console.log("Termino la Captura");
+            grabar = null;
+        }
+    }
 }
 
 function rotationXAnimate() {
     requestAnimationFrame(rotationXAnimate);
-
+    actualframe = renderer.info.render.frame;
+    if (empezar === true){
+        lastframe = renderer.info.render.frame;
+        console.log( lastframe );
+        capture.start();
+        console.log("emepzo la captura")
+        empezar = null;
+    } 
     object.rotation.x += rotateX;
     renderer.render(scene, camera);
-
+    //65 mas o menos = 1 Segundo, 650=10s
+    if (grabar === true){
+        framedif = actualframe - lastframe;
+        if ( framedif < 350){
+            capture.capture(canvas);
+            //console.log("frame actual" )
+            console.log( framedif );
+        } else if (framedif === 350){
+            capture.save();
+            capture.stop();
+            console.log("Termino la Captura");
+            grabar = null;
+        }
+    }
 };
 
 function rotationYAnimate() {
     requestAnimationFrame(rotationYAnimate);
-
+    actualframe = renderer.info.render.frame;
+    if (empezar === true){
+        lastframe = renderer.info.render.frame;
+        console.log( lastframe );
+        capture.start();
+        console.log("emepzo la captura")
+        empezar = null;
+    } 
     object.rotation.y += rotateY;
     renderer.render(scene, camera);
-
+    //65 mas o menos = 1 Segundo, 650=10s
+    if (grabar === true){
+        framedif = actualframe - lastframe;
+        if ( framedif < 350){
+            capture.capture(canvas);
+            //console.log("frame actual" )
+            console.log( framedif );
+        } else if (framedif === 350){
+            capture.save();
+            capture.stop();
+            console.log("Termino la Captura");
+            grabar = null;
+        }
+    }
 };
-
-
-
 
 function bounceAnimate() {
     acceleration = 5;
@@ -37,7 +105,14 @@ function bounceAnimate() {
     // Animate the scene
     const animate = () => {
         requestAnimationFrame(animate);
-
+        actualframe = renderer.info.render.frame;
+        if (empezar === true){
+            lastframe = renderer.info.render.frame;
+            console.log( lastframe );
+            capture.start();
+            console.log("emepzo la captura")
+            empezar = null;
+        } 
         if (object.position.y < bottom_position_y) {
             time_counter = 0;
         }
@@ -47,9 +122,61 @@ function bounceAnimate() {
         time_counter += time_step;
 
         renderer.render(scene, camera);
+        //65 mas o menos = 1 Segundo, 650=10s
+        if (grabar === true){
+            framedif = actualframe - lastframe;
+            if ( framedif < 350){
+                capture.capture(canvas);
+                //console.log("frame actual" )
+                console.log( framedif );
+            } else if (framedif === 350){
+                capture.save();
+                capture.stop();
+                console.log("Termino la Captura");
+                grabar = null;
+            }
+        }
     };
     animate();
 };
+
+function mobius(startTime) {
+    const animate = () => {
+        actualframe = renderer.info.render.frame;
+        if (empezar === true){
+            lastframe = renderer.info.render.frame;
+            console.log( lastframe );
+            capture.start();
+            console.log("emepzo la captura")
+            empezar = null;
+        } 
+        const currentTime = Date.now();
+        const time = (currentTime - startTime) / 1000;
+        requestAnimationFrame(animate);
+        object.position.y = 0.8;
+        object.rotation.x = time * 0.5;
+        object.rotation.y = time * 0.2;
+        object.scale.setScalar(Math.cos(time) * 0.125 + 0.875);
+
+        renderer.render(scene, camera);
+        //65 mas o menos = 1 Segundo, 650=10s
+        if (grabar === true){
+            framedif = actualframe - lastframe;
+            if ( framedif < 350){
+                capture.capture(canvas);
+                //console.log("frame actual" )
+                console.log( framedif );
+            } else if (framedif === 350){
+                capture.save();
+                capture.stop();
+                console.log("Termino la Captura");
+                grabar = null;
+            }
+        }
+    };
+    animate();
+
+}
 
 function exportAnimation() {
     const exporter = new THREE.GLTFExporter();
@@ -74,23 +201,5 @@ function save(blob, filename) {
     link.download = filename;
     link.click();
 }
-
-function mobius(startTime) {
-    const animate = () => {
-        const currentTime = Date.now();
-        const time = (currentTime - startTime) / 1000;
-        requestAnimationFrame(animate);
-        object.position.y = 0.8;
-        object.rotation.x = time * 0.5;
-        object.rotation.y = time * 0.2;
-        object.scale.setScalar(Math.cos(time) * 0.125 + 0.875);
-
-        renderer.render(scene, camera);
-    };
-    animate();
-
-}
-
-
 
 
