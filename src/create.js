@@ -7,14 +7,19 @@ function makeFloor(){
     blackTile=new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 150 }),
 
     floor = new THREE.Group()
-
+    var cube
     for(let x = -8; x < 8; x++){
         for(let z = -8; z < 8; z++){
             if(z%2==false){
-                var cube
-                cube=new THREE.Mesh(base, x % 2 == false ? whiteTile : blackTile);
+                if(x%2==false){
+                    cube=new THREE.Mesh(base,whiteTile)
+                }
+                else {cube=new THREE.Mesh(base, blackTile);}
             }else{
-                cube=new THREE.Mesh(base, x % 2 == false ? blackTile : whiteTile);
+                if(x%2==false){
+                    cube=new THREE.Mesh(base,blackTile)
+                }
+                else {cube=new THREE.Mesh(base, whiteTile);}
             }
             cube.position.set(x,0,z);
             floor.add(cube)
