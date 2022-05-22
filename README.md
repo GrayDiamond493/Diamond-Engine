@@ -1,5 +1,18 @@
 # Diamond Engine
 
+## Copyright
+Autor: 
+- Adrian Gutierrez
+- Juan Jose Madrigal
+
+Some implementations already existing in JavaScript were used.
+
+All styles were retrieved and adapted from open sources referenced bellow:
+
+> [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/), the world’s most popular framework for building responsive, mobile-first sites, with jsDelivr and a template starter page.
+
+> [Font Awesome](https://fontawesome.com/v4/cheatsheet/), the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
+
 ## INTRODUCCIÓN
 En las últimas décadas, el CGI ha tenido un enorme impacto, en especial con sus distintas aplicaciones en numerosos sectores, como el cine, arquitectura, medicina y videojuegos. Computer Generated Imagery o, por sus siglas, CGI, significa justo eso, imágenes generadas por computadora. En otras palabras, es el uso de gráficos por computadora en escenarios como el arte u otros medios visuales. Esta, puede ser tanto en 2D como 3D, ya sean objetos o cosas totalmente animados, fondos, efectos y partículas, incluso llegando al renderizado de personajes y mundos totalmente virtuales.
 
@@ -185,18 +198,18 @@ Por otro lado, desde el apartado técnico, el equipo aprendió, sobre todo, a tr
 Finalmente, desde una perspectiva más personal, se dio la oportunidad de trabajar en un proyecto bastante interesante, creando un motor gráfico a partir de recursos ya existentes, pero dándole una utilidad enfocada a nuestra solución, así como un toque personal a cada una de las partes utilizadas, para apegarlas a nuestro caso particular. 
 
 ## REFERENCIAS
--> https://www.grandviewresearch.com/industry-analysis/3d-animation-market
--> https://academyofanimatedart.com/breakthrough-and-expensive-cgi-scenes-in-mcu-movies/
--> https://icoginix.com/advantages-and-disadvantages-of-using-cgi-in-the-film-industry/
--> https://www.studiobinder.com/blog/what-is-cgi-meaning-definition/
-https://www.creativehumans.com/blog/how-much-animation-cost
-https://geekflare.com/best-cfd-analysis-software/
-https://www.gamedesigning.org/career/video-game-engines/
-https://www.eurekalert.org/news-releases/497585
-https://www.youtube.com/watch?v=K8LFWvSqdJI
-https://www.openculture.com/2021/04/how-pixars-movement-animation-became-so-realistic.html
-https://discourse.threejs.org/t/exporting-an-animated-gltf-using-gltfexporter/29567
-https://www.nfi.edu/what-is-cgi/
-https://moneyinc.com/much-costs-make-single-episode-game-thrones/
+> https://www.grandviewresearch.com/industry-analysis/3d-animation-market
+> https://academyofanimatedart.com/breakthrough-and-expensive-cgi-scenes-in-mcu-movies/
+> https://icoginix.com/advantages-and-disadvantages-of-using-cgi-in-the-film-industry/
+> https://www.studiobinder.com/blog/what-is-cgi-meaning-definition/
+> https://www.creativehumans.com/blog/how-much-animation-cost
+> https://geekflare.com/best-cfd-analysis-software/
+> https://www.gamedesigning.org/career/video-game-engines/
+> https://www.eurekalert.org/news-releases/497585
+> https://www.youtube.com/watch?v=K8LFWvSqdJI
+> https://www.openculture.com/2021/04/how-pixars-movement-animation-became-so-realistic.html
+> https://discourse.threejs.org/t/exporting-an-animated-gltf-using-gltfexporter/29567
+> https://www.nfi.edu/what-is-cgi/
+> https://moneyinc.com/much-costs-make-single-episode-game-thrones/
 
 
