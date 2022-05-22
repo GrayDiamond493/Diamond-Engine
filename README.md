@@ -41,7 +41,7 @@ Sobre este tema, José Navarro (2018), para el portal web Statista, publicó un 
 
 ![image]()
  
-[Figura 1.1 Costos CGI Recuperado de https://www.statista.com/statistics/1020957/cgi-animated-movie-production-costs-us/]
+> [Figura 1.1 Costos CGI Recuperado de https://www.statista.com/statistics/1020957/cgi-animated-movie-production-costs-us/]
 
 Luego de este estudio, el autor pudo concluir que, solo en la industria del cine, se gastaban en promedio 33.7 millones de dólares para el 2018 por película. Claramente, esta inversión realizada por los grandes estudios no es posible para una persona del común que solo desea realizar animaciones como pasatiempo o tiene curiosidad al respecto. Más aún, sabiendo que se necesita de ciertas calificaciones para lograr un trabajo de calidad, llegar a conocer el software y adquirir una cantidad decente de conocimientos sobre el (véase Blender) se lleva una buena cantidad de tiempo en practicar y aprender, llevado a extremos al saber que para proyectos profesionales se tienen equipos grandes, con especialistas en distintos campos y habilidades. 
 
@@ -52,27 +52,27 @@ ESTADO DEL ARTE
 En el mercado, encontramos distintas soluciones a la aplicación del CGI en distintos sectores. En el área de mecánica de fluidos, de especial importancia para la ingeniería, ya que permite el movimiento de fluidos (por ejemplo, a través de tuberías), lograr una simulación no es fácil y, aunque existen distintos programas y aplicaciones que permiten realizar esta simulación, estos son bastante costosos, siendo incluso una licencia individual para acceder a un buen sistema profesional muy valiosa de adquirir.
 
 ![image]()
-[Figura 2.0. Mecánica de Fluidos]
+> [Figura 2.0. Mecánica de Fluidos]
 
 Una de las soluciones encontradas en el mercado podría ser OpenFOAM, una solución gratuita, con licencia Open Source, la cual permite realizar todos los esquemas de volumen finito. No obstante, cuenta con una curva de aprendizaje bastante pronunciada para su uso.
 
 ![image]()
-[Figura 2.1. OpenFOAM]
+> [Figura 2.1. OpenFOAM]
 
 Luego, encontramos uno de los sectores más productivos en materia de CGI: el del entretenimiento. Varios estudios, como el realizado en junio de 2021 por Grand View Research, han confirmado que al menos un tercio del uso de CGI se destina a productos mediáticos y de entretenimiento. Gráficamente:
 
 ![image]()
-[Figura 2.2. Uso de CGI]
+> [Figura 2.2. Uso de CGI]
 
 En este punto, se da a conocer una necesidad latente: conseguir un realismo de la animación y los efectos CGI en las películas es muy complicado y requiere de una enorme inversión económica, debido a todo el detalle que se debe tener en cuenta. Hay mucho a lograr con tal de dar más realismo a una película, cosas tan simples como el cabello o lograr la fluidez de la animación no son tareas fáciles para los productores. En este frente, Disney y Pixar son algunos de los mejores exponentes.
 Para mejorar esto Disney creó su Framework: El primero en usar métodos para estimar los parámetros para la dinámica del cabello y ajusta los parámetros al cabello capturado en movimiento, esto lo usan para volver a simular el cabello capturado y también para editar la animación cambiando el movimiento de la cabeza, las propiedades físicas del cabello, como la humedad y las fuerzas externas.
 
 ![image]()
-[Figura 2.3. Dinámica de Cabello]
+> [Figura 2.3. Dinámica de Cabello]
 El movimiento es otro ámbito difícil en el mismo por lo cual, en el caso de Pixar, a lo largo de su historia han creado diferentes frameworks y sistemas los cuales mejoran con cada película y les permiten crear distintos controles sobre los personajes y cómo estos pueden reaccionar o moverse según la situación o el personaje que estén animando. Han llegado a tener para un solo personaje más de 1000 controles en general para lograr fluidez en sus movimientos, llegando actualmente algunos incluso a los 7000 controles.
 
 ![image]()
-[Figura 2.4. Fluidez de Movimiento]
+> [Figura 2.4. Fluidez de Movimiento]
 
 En el mismo contexto del entretenimiento, además de las películas, está el CGI en videojuegos. Crear videojuegos no es una tarea sencilla, toda la programación y diseño que hay detrás de un buen videojuego no se hace en un solo día, además de que el software y los elementos que se usan en su creación muchas veces no son baratos, o aquellos creados por las compañías no fueron sencillos de crear. A pesar de esto, actualmente casi cualquiera puede hacer un videojuego con las herramientas adecuadas. Estas herramientas se conocen como “Motores de Videojuegos”.
 
@@ -81,17 +81,17 @@ Algunos ejemplos claros de motores de videojuegos en el mercado que podemos resc
 •	GameMaker Studio: A diferencia de la mayoría de los otros motores de juegos se ha utilizado ampliamente porque no requiere conocimientos de programación para su uso permitiendo crear juegos mucho más fáciles y rápidos que la codificación con lenguajes nativos, aunque tiene versión gratuita para hacer los mejores juegos es recomendable su versión de pago.
 
 ![image]()
-[Figura 2.5. GameMaker]
+> [Figura 2.5. GameMaker]
 
 •	Unity: Permite crear contenido 3D interactivo con facilidad. Una gran cantidad de desarrolladores independientes utilizan Unity por su excelente funcionalidad, contenido de alta calidad y su capacidad para prácticamente cualquier tipo de juego, teniendo una edición personal gratis y otra profesión con más opciones.
 
 ![image]()
-[Figura 2.6. Unity]
+> [Figura 2.6. Unity]
 
 •	-Godot: Es de uso gratuito y de código abierto a través de la licencia MIT, que permite exportar videojuegos tanto en 2D como 3D a PC, teléfonos móviles, e incluso despliegues web en formato HTML5.
 
 ![image]()
-[Figura 2.7. Godot]
+> [Figura 2.7. Godot]
 
  
 SOLUCIÓN PROPUESTA
@@ -102,16 +102,16 @@ Entonces, la solución planteada por el equipo es una aplicación que permita la
 Es sumamente necesario aclarar que, por motivos como el tiempo y el recurso humano disponible para el proyecto, no consideramos que la creación de imágenes como escenarios complejos o imágenes fotorrealistas estén dentro de nuestro alcance. Como equipo, queremos concentrarnos, al menos en lo que respecta a la materia de computación gráfica, en brindar una solución simple para la creación de objetos y personajes geométricamente sencillos.
 
 ![image]()
-[Figura 3.1. Alcance]
+> [Figura 3.1. Alcance]
 
 Más a profundidad, se ha decidido desarrollar una aplicación de arquitectura monolítica desarrollada en JavaScript, con vistas en HTML, apoyadas por plantillas de Bootstrap 5.
 La aplicación cuenta con dos vistas sencillas, en los archivos home.html y display.html.
 
 ![image]()
-[Figura 4.1. Home]
+> [Figura 4.1. Home]
 
 ![image]()
-[Figura 4.2. Display]
+> [Figura 4.2. Display]
 
  
 Desde Display, se puede escoger una de entre 5 vistas predeterminadas, que permiten crear, animar y descargar un modelo tridimensional. Por el momento, se cuenta con 5 modelos: Esfera, Cubo, Cinta de Mobius, Flecha y Casa. De los cuales, la flecha y la casa son modelos realizados a partir de vectores a modo de pruebas y de aprendizaje del equipo.
@@ -293,31 +293,31 @@ Estas vistas resultan bastante redundantes, debido a las pobres capacidades de H
 En ellas, varían el modelo geométrico a ser creado y las animaciones disponibles. Antes de crear un objeto, la vista general del motor sería la siguiente:
 
 ![image]()
-[Figura 4.3.Vistas Modelos]
+> [Figura 4.3.Vistas Modelos]
 
 
 Allí, se tienen las siguientes opciones:
 -	Zoom In: Para acercar la imagen hacia el observador.
 
 ![image]()
-[Figura 4.4. Zoom In]
+> [Figura 4.4. Zoom In]
 -	Zoom Out: Para alejar la imagen del observador.
 
 ![image]()
-[Figura 4.5. Zoom Out]
+> [Figura 4.5. Zoom Out]
 -	Color Picker: Para escoger el color predominante del modelo.
 
 ![image]()
-[Figura 4.6. Color]
+> [Figura 4.6. Color]
 -	Show: Mostrar la imagen escogida.
 
 ![image]()
-[Figura 4.7. Show]
+> [Figura 4.7. Show]
 
 -	Download: Descargar el modelo creado.
 
 ![image]()
-[Figura 4.8. Download]
+> [Figura 4.8. Download]
 
 Desde lo más interno, se tomó como base la biblioteca [three.js](), con las bibliotecas Open Source [OrbitControls.js](), para controlar el ángulo de la cámara desde el mouse y [GLTFExporter.js](), para permitir la descarga de escenas creadas.
 Así, la elección del usuario desde las vistas acciona funciones desde [choice.js](), encargado de generar el objeto adecuado dependiendo de la selección del usuario. Este, cuenta con la siguiente estructura:
@@ -420,7 +420,7 @@ Al contrastar nuestra aplicación con otras de corte profesional, como Blender o
 Además, permite exportar el trabajo creado y descargarlo en un formato incluso reconocido por Windows.
 
 ![image]()
-[figura 5.1. Modelo en Windows]
+> [figura 5.1. Modelo en Windows]
 
 Todo esto, marca una diferencia con lo que ya se ha implementado en el mercado. Lo cual, como hemos visto anteriormente, resulta costoso, al tener que invertir no solo en licencias, sino también en calificación y enfrentar la curva de aprendizaje que, en su mayoría, es bastante pronunciada. Asimismo, cabe destacar la necesidad de instalación y el enorme uso de poder computacional, al no todo el mundo poseer los recursos tecnológicos necesarios para crear y animar imágenes tridimensionales. Este problema desaparece al tener una solución Web, pues es el navegador quien se encarga de ello.
  
