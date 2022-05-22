@@ -219,7 +219,17 @@ Estas vistas resultan bastante redundantes, debido a las pobres capacidades de H
             type="button"
             class="btn btn-labeled btn-warning"
           >
-            <span class="btn-label"><i class="fa fa-download"></i></span>Download
+            <span class="btn-label"><i class="fa fa-download"></i></span>Scene Download
+          </button>
+        </div>
+        <div class="col">
+          <button
+            id="choice"
+            onclick="videoDowload()"
+            type="button"
+            class="btn btn-labeled btn-warning"
+          >
+            <span class="btn-label"><i class="fa fa-video-camera"></i></span>Video Download
           </button>
         </div>
         </div>
@@ -248,6 +258,7 @@ Estas vistas resultan bastante redundantes, debido a las pobres capacidades de H
     <script src="../../js/three.js"></script>
     <script src="../../js/OrbitControls.js"></script>
     <script src="../../js/GLTFExporter.js"></script>
+    <script src="../../js/CCapture.all.min.js"></script>
     <script src="../create.js"></script>
     <script src="../animation.js"></script>
     <script src="../choice.js"></script>
@@ -280,6 +291,16 @@ Estas vistas resultan bastante redundantes, debido a las pobres capacidades de H
         setPos(pos);
         choose("1");
         bounceAnimate();
+      }
+      var capture = new CCapture({
+				format: 'webm',
+				//workersPath: 'js/',
+				framerate: 60,
+				verbose: true
+			});
+      var grabadora = true;
+      function videoDowload(){
+        record(grabadora);
       }
     </script>
     
@@ -406,10 +427,30 @@ Finalmente, se llega al apartado de animaciones, en el archivo [animation.js](ht
 ```javascript
 function rotationXAnimate() {
     requestAnimationFrame(rotationXAnimate);
-
+    actualframe = renderer.info.render.frame;
+    if (empezar === true){
+        lastframe = renderer.info.render.frame;
+        console.log( lastframe );
+        capture.start();
+        console.log("emepzo la captura")
+        empezar = null;
+    } 
     object.rotation.x += rotateX;
     renderer.render(scene, camera);
-
+    //65 mas o menos = 1 Segundo, 650=10s
+    if (grabar === true){
+        framedif = actualframe - lastframe;
+        if ( framedif < 350){
+            capture.capture(canvas);
+            //console.log("frame actual" )
+            console.log( framedif );
+        } else if (framedif === 350){
+            capture.save();
+            capture.stop();
+            console.log("Termino la Captura");
+            grabar = null;
+        }
+    }
 };
 ``` 
 En este, se rota el objeto sobre el eje X, según un valor variable para que, en un futuro, puedan añadirse cambios en la velocidad, luego, la función es utilizada como parámetro por requestAnimationFrame().
