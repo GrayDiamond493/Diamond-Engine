@@ -3,6 +3,7 @@ var actualframe = 0;
 var grabar = null;
 var empezar = null;
 var framedif = 0;
+var duration = 350;// 3 5 0 
 function record(begin) {
     grabar = begin;
     empezar = begin;
@@ -20,14 +21,13 @@ function justShow() {
     object.rotation.x = 0.5
     object.rotation.y = 0.5
     renderer.render(scene, camera);
-    //65 mas o menos = 1 Segundo, 650=10s
+    //650 +-= 10s
     if (grabar === true){
         framedif = actualframe - lastframe;
-        if ( framedif < 350){
+        if ( framedif < duration){
             capture.capture(canvas);
-            //console.log("frame actual" )
             console.log( framedif );
-        } else if (framedif === 350){
+        } else if (framedif === duration){
             capture.save();
             capture.stop();
             console.log("Termino la Captura");
@@ -48,14 +48,14 @@ function rotationXAnimate() {
     } 
     object.rotation.x += rotateX;
     renderer.render(scene, camera);
-    //65 mas o menos = 1 Segundo, 650=10s
+    //650 +-= 10s
     if (grabar === true){
         framedif = actualframe - lastframe;
-        if ( framedif < 350){
+        if ( framedif < duration){
             capture.capture(canvas);
-            //console.log("frame actual" )
+            
             console.log( framedif );
-        } else if (framedif === 350){
+        } else if (framedif === duration){
             capture.save();
             capture.stop();
             console.log("Termino la Captura");
@@ -76,14 +76,14 @@ function rotationYAnimate() {
     } 
     object.rotation.y += rotateY;
     renderer.render(scene, camera);
-    //65 mas o menos = 1 Segundo, 650=10s
+    //650 +-= 10s
     if (grabar === true){
         framedif = actualframe - lastframe;
-        if ( framedif < 350){
+        if ( framedif < duration){
             capture.capture(canvas);
-            //console.log("frame actual" )
+            
             console.log( framedif );
-        } else if (framedif === 350){
+        } else if (framedif === duration){
             capture.save();
             capture.stop();
             console.log("Termino la Captura");
@@ -122,14 +122,14 @@ function bounceAnimate() {
         time_counter += time_step;
 
         renderer.render(scene, camera);
-        //65 mas o menos = 1 Segundo, 650=10s
+        //650 +-= 10s
         if (grabar === true){
             framedif = actualframe - lastframe;
-            if ( framedif < 350){
+            if ( framedif < duration){
                 capture.capture(canvas);
-                //console.log("frame actual" )
+                
                 console.log( framedif );
-            } else if (framedif === 350){
+            } else if (framedif === duration){
                 capture.save();
                 capture.stop();
                 console.log("Termino la Captura");
@@ -159,14 +159,14 @@ function mobius(startTime) {
         object.scale.setScalar(Math.cos(time) * 0.125 + 0.875);
 
         renderer.render(scene, camera);
-        //65 mas o menos = 1 Segundo, 650=10s
+        //650 +-= 10s
         if (grabar === true){
             framedif = actualframe - lastframe;
-            if ( framedif < 350){
+            if ( framedif < duration){
                 capture.capture(canvas);
-                //console.log("frame actual" )
+                
                 console.log( framedif );
-            } else if (framedif === 350){
+            } else if (framedif === duration){
                 capture.save();
                 capture.stop();
                 console.log("Termino la Captura");

@@ -437,14 +437,13 @@ function rotationXAnimate() {
     } 
     object.rotation.x += rotateX;
     renderer.render(scene, camera);
-    //65 mas o menos = 1 Segundo, 650=10s
+    //650 +-= 10s
     if (grabar === true){
         framedif = actualframe - lastframe;
-        if ( framedif < 350){
+        if ( framedif < duration){
             capture.capture(canvas);
-            //console.log("frame actual" )
             console.log( framedif );
-        } else if (framedif === 350){
+        } else if (framedif === duration){
             capture.save();
             capture.stop();
             console.log("Termino la Captura");
