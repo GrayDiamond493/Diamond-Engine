@@ -98,8 +98,11 @@ Algunos ejemplos claros de motores de videojuegos en el mercado que podemos resc
 ## SOLUCIÓN PROPUESTA
 
 Tal y como pudimos ver anteriormente, el CGI no es para nada sencillo, ni barato. Si tomamos como ejemplo cotidiano el cine, una película promedio de Marvel cuesta entre 100 y 200 millones de dólares para su producción. Con tales cifras, ninguna persona del común se atrevería a intentar implementar CGI de calidad para una obra independiente.
+
 Además de los precios, nos vemos en la necesidad de hacer especial énfasis en la curva de aprendizaje que varias de las soluciones aquí expuestas presentan. Muchas necesitan de varias horas de estudio solo para ser utilizadas, lo cual resulta sumamente frustrante para artistas o cualquier persona que desee incursionar en el mundo del CGI sin conocimientos previos. Para ello, se plantea la creación de una interfaz amigable con el usuario, menús pequeños y con íconos que faciliten su entendimiento, para la creación de imágenes tridimensionales simples que, aunque no se comparen con las de grandes estudios con presupuestos millonarios, brindarían una introducción amigable a este mundo.
+
 Entonces, la solución planteada por el equipo es una aplicación que permita la creación de imágenes compuestas a través de formas básicas (cubos, esferas…) sin necesidad de ningún conocimiento matemático o computacional previo, solo se necesita una idea a la que se desee dar vida. Para ello, se decidió crear un motor gráfico como los vistos en clase, que le permita al usuario, por medio de menús, insertar distintos objetos y ensamblarlos para crear una imagen que, posteriormente, pueda ser descargada.
+
 Es sumamente necesario aclarar que, por motivos como el tiempo y el recurso humano disponible para el proyecto, no consideramos que la creación de imágenes como escenarios complejos o imágenes fotorrealistas estén dentro de nuestro alcance. Como equipo, queremos concentrarnos, al menos en lo que respecta a la materia de computación gráfica, en brindar una solución simple para la creación de objetos y personajes geométricamente sencillos.
 
 ![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/alance.png)
