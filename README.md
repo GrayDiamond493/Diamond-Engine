@@ -69,7 +69,8 @@ Para mejorar esto Disney creó su Framework: El primero en usar métodos para es
 
 ![image](https://beforesandafters.com/wp-content/uploads/2021/02/FrozElsaHairWindInteraction.jpg)
 > [Figura 2.3. Dinámica de Cabello]
-El movimiento es otro ámbito difícil en el mismo por lo cual, en el caso de Pixar, a lo largo de su historia han creado diferentes frameworks y sistemas los cuales mejoran con cada película y les permiten crear distintos controles sobre los personajes y cómo estos pueden reaccionar o moverse según la situación o el personaje que estén animando. Han llegado a tener para un solo personaje más de 1000 controles en general para lograr fluidez en sus movimientos, llegando actualmente algunos incluso a los 7000 controles.
+
+El movimiento es otro ámbito difícil en el mismo, por lo cual en el caso de Pixar, a lo largo de su historia han creado diferentes frameworks y sistemas los cuales mejoran con cada película y les permiten crear distintos controles sobre los personajes y cómo estos pueden reaccionar o moverse según la situación o el personaje que estén animando. Han llegado a tener para un solo personaje más de 1000 controles en general para lograr fluidez en sus movimientos, llegando actualmente algunos incluso a los 7000 controles.
 
 ![image](https://www.industriaanimacion.com/wp-content/uploads/2021/08/Cover-1-10-960x504.jpg)
 > [Figura 2.4. Fluidez de Movimiento]
@@ -80,7 +81,7 @@ Algunos ejemplos claros de motores de videojuegos en el mercado que podemos resc
 
 •	GameMaker Studio: A diferencia de la mayoría de los otros motores de juegos se ha utilizado ampliamente porque no requiere conocimientos de programación para su uso permitiendo crear juegos mucho más fáciles y rápidos que la codificación con lenguajes nativos, aunque tiene versión gratuita para hacer los mejores juegos es recomendable su versión de pago.
 
-![image](https://www.researchgate.net/profile/Shah-Rizone/publication/313806204/figure/fig6/AS:748135232073729@1555380747875/GameMaker-Studio-Interface-6-Arduino-Software-Serial-The-Arduino-Software-Serial-is-a.jpg)
+![image](https://coal.gamemaker.io/sites/5d75794b3c84c70006700381/assets/61af72920d7ef200082c44f9/room-editor-slide.jpg)
 > [Figura 2.5. GameMaker]
 
 •	Unity: Permite crear contenido 3D interactivo con facilidad. Una gran cantidad de desarrolladores independientes utilizan Unity por su excelente funcionalidad, contenido de alta calidad y su capacidad para prácticamente cualquier tipo de juego, teniendo una edición personal gratis y otra profesión con más opciones.
