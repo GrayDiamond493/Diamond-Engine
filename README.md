@@ -39,7 +39,7 @@ Dejando el recurso humano de lado y, desde una perspectiva más computacional, l
 
 Sobre este tema, José Navarro (2018), para el portal web Statista, publicó un estudio en el que se muestra el costo promedio de CGI por película (en millones de dólares) por año. 
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/cgi-costs.PNG)
  
 > [Figura 1.1 Costos CGI Recuperado de https://www.statista.com/statistics/1020957/cgi-animated-movie-production-costs-us/]
 
@@ -51,12 +51,12 @@ Luego de este estudio, el autor pudo concluir que, solo en la industria del cine
 
 En el mercado, encontramos distintas soluciones a la aplicación del CGI en distintos sectores. En el área de mecánica de fluidos, de especial importancia para la ingeniería, ya que permite el movimiento de fluidos (por ejemplo, a través de tuberías), lograr una simulación no es fácil y, aunque existen distintos programas y aplicaciones que permiten realizar esta simulación, estos son bastante costosos, siendo incluso una licencia individual para acceder a un buen sistema profesional muy valiosa de adquirir.
 
-![image]()
+![image](https://storage.googleapis.com/site.esss.co/4e1a35d7-2020-09-14-blog-fluidod-comput.jpg)
 > [Figura 2.0. Mecánica de Fluidos]
 
 Una de las soluciones encontradas en el mercado podría ser OpenFOAM, una solución gratuita, con licencia Open Source, la cual permite realizar todos los esquemas de volumen finito. No obstante, cuenta con una curva de aprendizaje bastante pronunciada para su uso.
 
-![image]()
+![image](https://images.squarespace-cdn.com/content/v1/521e95f4e4b01c5870ce81cf/1411750639725-WSP9Z0O9F56XDEBTZJ83/Simulaci%C3%B3n+de+un+vertedero)
 > [Figura 2.1. OpenFOAM]
 
 Luego, encontramos uno de los sectores más productivos en materia de CGI: el del entretenimiento. Varios estudios, como el realizado en junio de 2021 por Grand View Research, han confirmado que al menos un tercio del uso de CGI se destina a productos mediáticos y de entretenimiento. Gráficamente:
@@ -67,11 +67,11 @@ Luego, encontramos uno de los sectores más productivos en materia de CGI: el de
 En este punto, se da a conocer una necesidad latente: conseguir un realismo de la animación y los efectos CGI en las películas es muy complicado y requiere de una enorme inversión económica, debido a todo el detalle que se debe tener en cuenta. Hay mucho a lograr con tal de dar más realismo a una película, cosas tan simples como el cabello o lograr la fluidez de la animación no son tareas fáciles para los productores. En este frente, Disney y Pixar son algunos de los mejores exponentes.
 Para mejorar esto Disney creó su Framework: El primero en usar métodos para estimar los parámetros para la dinámica del cabello y ajusta los parámetros al cabello capturado en movimiento, esto lo usan para volver a simular el cabello capturado y también para editar la animación cambiando el movimiento de la cabeza, las propiedades físicas del cabello, como la humedad y las fuerzas externas.
 
-![image]()
+![image](https://beforesandafters.com/wp-content/uploads/2021/02/FrozElsaHairWindInteraction.jpg)
 > [Figura 2.3. Dinámica de Cabello]
 El movimiento es otro ámbito difícil en el mismo por lo cual, en el caso de Pixar, a lo largo de su historia han creado diferentes frameworks y sistemas los cuales mejoran con cada película y les permiten crear distintos controles sobre los personajes y cómo estos pueden reaccionar o moverse según la situación o el personaje que estén animando. Han llegado a tener para un solo personaje más de 1000 controles en general para lograr fluidez en sus movimientos, llegando actualmente algunos incluso a los 7000 controles.
 
-![image]()
+![image](https://www.industriaanimacion.com/wp-content/uploads/2021/08/Cover-1-10-960x504.jpg)
 > [Figura 2.4. Fluidez de Movimiento]
 
 En el mismo contexto del entretenimiento, además de las películas, está el CGI en videojuegos. Crear videojuegos no es una tarea sencilla, toda la programación y diseño que hay detrás de un buen videojuego no se hace en un solo día, además de que el software y los elementos que se usan en su creación muchas veces no son baratos, o aquellos creados por las compañías no fueron sencillos de crear. A pesar de esto, actualmente casi cualquiera puede hacer un videojuego con las herramientas adecuadas. Estas herramientas se conocen como “Motores de Videojuegos”.
