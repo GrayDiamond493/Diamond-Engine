@@ -27,9 +27,9 @@ Aunado a ello, más allá de la creatividad necesaria para concebir una imagen, 
 Por otro lado, resulta relevante discutir sus costos. Aunque usar CGI para hacer una película, clip u otro medio podría ahorrar tiempo y dinero, en especial a la hora de generar escenas difíciles o imposibles, como batallas en el espacio o dinosaurios en un parque, herramientas como el hardware, software y dispositivos como pantallas verdes o cámaras, cuestan dinero.
 
 Desde una perspectiva proyectizada, claramente dependiendo de sus características y del tamaño del proyecto y calidad esperada, pueden estimarse los siguientes presupuestos:
-•	$3000 - $7000 Por minuto. Aún considerado bajo presupuesto.
-•	$10000 - $20000 Por minuto. Aproximadamente el mínimo de un video animado producido profesionalmente.
-•	$50000 - $100000+ Por minuto. A partir de este rango pueden esperarse valores de producción de calidad.
+-	$3000 - $7000 Por minuto. Aún considerado bajo presupuesto.
+-	$10000 - $20000 Por minuto. Aproximadamente el mínimo de un video animado producido profesionalmente.
+-	$50000 - $100000+ Por minuto. A partir de este rango pueden esperarse valores de producción de calidad.
 
 De acuerdo con Garret Parker (2016), en un artículo para MoneyInc acerca del costo promedio de un episodio de Game of Thrones, el costo el CGI es significativo por 2 razones: talento humano y recursos computacionales. 
 
