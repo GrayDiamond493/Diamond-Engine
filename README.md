@@ -105,7 +105,7 @@ Es sumamente necesario aclarar que, por motivos como el tiempo y el recurso huma
 > [Figura 3.1. Alcance]
 
 Más a profundidad, se ha decidido desarrollar una aplicación de arquitectura monolítica desarrollada en JavaScript, con vistas en HTML, apoyadas por plantillas de Bootstrap 5.
-La aplicación cuenta con dos vistas sencillas, en los archivos home.html y display.html.
+La aplicación cuenta con dos vistas sencillas, en los archivos [home.html](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/home.html) y [display.html](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/display.html).
 
 ![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/home.PNG)
 > [Figura 4.1. Home]
@@ -117,6 +117,7 @@ La aplicación cuenta con dos vistas sencillas, en los archivos home.html y disp
 Desde Display, se puede escoger una de entre 5 vistas predeterminadas, que permiten crear, animar y descargar un modelo tridimensional. Por el momento, se cuenta con 5 modelos: Esfera, Cubo, Cinta de Mobius, Flecha y Casa. De los cuales, la flecha y la casa son modelos realizados a partir de vectores a modo de pruebas y de aprendizaje del equipo.
 Estas vistas resultan bastante redundantes, debido a las pobres capacidades de HTML para importar contenidos y secciones sin el uso de frameworks. La estructura de estas vistas es la siguiente:
 
+> Ejemplo tomado de [sphere.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/labs/sphere.html)
 ```html
 <!DOCTYPE html>
 <html>
@@ -299,28 +300,28 @@ En ellas, varían el modelo geométrico a ser creado y las animaciones disponibl
 Allí, se tienen las siguientes opciones:
 -	Zoom In: Para acercar la imagen hacia el observador.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/zoom-in.png)
 > [Figura 4.4. Zoom In]
 -	Zoom Out: Para alejar la imagen del observador.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/zoom-out.png)
 > [Figura 4.5. Zoom Out]
 -	Color Picker: Para escoger el color predominante del modelo.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/color.png)
 > [Figura 4.6. Color]
 -	Show: Mostrar la imagen escogida.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/show.png)
 > [Figura 4.7. Show]
 
 -	Download: Descargar el modelo creado.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/download.png)
 > [Figura 4.8. Download]
 
-Desde lo más interno, se tomó como base la biblioteca [three.js](), con las bibliotecas Open Source [OrbitControls.js](), para controlar el ángulo de la cámara desde el mouse y [GLTFExporter.js](), para permitir la descarga de escenas creadas.
-Así, la elección del usuario desde las vistas acciona funciones desde [choice.js](), encargado de generar el objeto adecuado dependiendo de la selección del usuario. Este, cuenta con la siguiente estructura:
+Desde lo más interno, se tomó como base la biblioteca [three.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/js/three.js), con las bibliotecas Open Source [OrbitControls.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/js/OrbitControls.js), para controlar el ángulo de la cámara desde el mouse y [GLTFExporter.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/js/GLTFExporter.js), para permitir la descarga de escenas creadas.
+Así, la elección del usuario desde las vistas acciona funciones desde [choice.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/choice.js), encargado de generar el objeto adecuado dependiendo de la selección del usuario. Este, cuenta con la siguiente estructura:
 ```javascript
 function choose(shapeChoice){
     switch (shapeChoice) {
@@ -340,7 +341,7 @@ function choose(shapeChoice){
 ``` 
 Esto, sigue la misma lógica para cada selección posible, en la que el usuario escoge un objeto, su color y su posición relativa a la cámara. Cada vez que el usuario cambia su algún parámetro, la escena debe ser eliminada para evitar superposiciones y se añade el nuevo objeto con los parámetros establecidos a la escena a través del método addScene().
 
-Entonces, pasamos al archivo create.js, el cual, tal y como indica su nombre, trata de crear objetos dentro de la escena, con los parámetros escogidos por el usuario. La mayoría de estos, están fuertemente basados en la documentación de three.js, recuperada de: 
+Entonces, pasamos al archivo [create.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/create.js), el cual, tal y como indica su nombre, trata de crear objetos dentro de la escena, con los parámetros escogidos por el usuario. La mayoría de estos, están fuertemente basados en la [documentación de three.js](https://threejs.org/)
 Una función ‘make’ cualquiera cuenta con la siguiente estructura:
 ```javascript
 function makeCube(colour) {
@@ -385,7 +386,7 @@ function makeFloor(){
 }
 
 ``` 
-En la función makefloor, se hace un suelo con el suficiente contraste como para que el usuario pueda observar correctamente la iluminación, cambio de tamaño y movimiento del objeto con respecto a la cámara. Para ello, se tienen dos cubos, negro y blanco, que formaran las ‘baldozas’ intercaladas de acuerdo con la función mostrada. Posteriormente, se añade el suelo a la escena.
+En la función makeFloor(), se hace un suelo con el suficiente contraste como para que el usuario pueda observar correctamente la iluminación, cambio de tamaño y movimiento del objeto con respecto a la cámara. Para ello, se tienen dos cubos, negro y blanco, que formaran las ‘baldosas’ intercaladas de acuerdo con la función mostrada. Posteriormente, se añade el suelo a la escena.
 
 La función addScene() fue concebida con el propósito de tener más control sobre cuándo puede un objeto unirse a la escena, para así favorecer aspectos como el control y la escalabilidad de la aplicación.
 ```javascript
@@ -397,7 +398,7 @@ function addScene(object, pos) {
 ``` 
 
 Tal y como puede verse en el extracto de código anterior, esta función se encarga de recibir cada objeto y agregarlo a la escena actual, además de controlar su posición relativa.
-Finalmente, se llega al apartado de animaciones, desde donde se cambia la posición de un objeto repetidamente y se lleva a la función de three.js requestAnimationFrame(), para crear recursivamente la ilusión de movimiento. Un ejemplo bastante sencillo podría ser:
+Finalmente, se llega al apartado de animaciones, en el archivo [animation.js](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/src/animation.js) desde donde se cambia la posición de un objeto repetidamente y se lleva a la función de three.js requestAnimationFrame(), para crear recursivamente la ilusión de movimiento. Un ejemplo bastante sencillo podría ser:
 ```javascript
 function rotationXAnimate() {
     requestAnimationFrame(rotationXAnimate);
@@ -419,10 +420,16 @@ Por otro lado, es una solución que no requiere de instalación ni inversión ec
 Al contrastar nuestra aplicación con otras de corte profesional, como Blender o motores de videojuegos variados, se cuenta con la especial ventaja de que requiere poco o nulo conocimiento en diseño y animación en 3D, o de codificación, puesto que todo puede hacerse desde la interfaz gráfica.
 Además, permite exportar el trabajo creado y descargarlo en un formato incluso reconocido por Windows.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/windows-viewer.PNG)
 > [figura 5.1. Modelo en Windows]
 
 Todo esto, marca una diferencia con lo que ya se ha implementado en el mercado. Lo cual, como hemos visto anteriormente, resulta costoso, al tener que invertir no solo en licencias, sino también en calificación y enfrentar la curva de aprendizaje que, en su mayoría, es bastante pronunciada. Asimismo, cabe destacar la necesidad de instalación y el enorme uso de poder computacional, al no todo el mundo poseer los recursos tecnológicos necesarios para crear y animar imágenes tridimensionales. Este problema desaparece al tener una solución Web, pues es el navegador quien se encarga de ello.
+
+Por ejemplo, una pantalla cualquiera de la aplicación funcionando correctamente podría ser al crear un cubo, agregarle color y darle una animación de rebote más rotación lateral.
+
+ ![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/bounce-example.PNG)
+> [Figura 5.2. Ejemplo Aplicación Funcionando]
+
  
 ## CONCLUSIONES
 Como conclusión, el equipo se permitió aprender, no solo aspectos técnicos sobre el desarrollo del CGI, sino el contexto en el que se encuentra en la industria, que era desconocido para el equipo hasta antes de iniciar el desarrollo del proyecto. Las distintas tecnologías en el mercado, entre las cuales algunas eran bastante conocidas o, incluso, se había trabajado sobre ellas (Godot, por ejemplo), permitieron basarse en ellas para la creación de un motor gráfico con mínimas capacidades que permitiera introducir al usuario casual al mundo de las imágenes generadas por computadora.
