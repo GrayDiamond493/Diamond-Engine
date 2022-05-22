@@ -107,10 +107,10 @@ Es sumamente necesario aclarar que, por motivos como el tiempo y el recurso huma
 Más a profundidad, se ha decidido desarrollar una aplicación de arquitectura monolítica desarrollada en JavaScript, con vistas en HTML, apoyadas por plantillas de Bootstrap 5.
 La aplicación cuenta con dos vistas sencillas, en los archivos home.html y display.html.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/home.PNG)
 > [Figura 4.1. Home]
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/display.PNG)
 > [Figura 4.2. Display]
 
  
@@ -292,7 +292,7 @@ Estas vistas resultan bastante redundantes, debido a las pobres capacidades de H
 
 En ellas, varían el modelo geométrico a ser creado y las animaciones disponibles. Antes de crear un objeto, la vista general del motor sería la siguiente:
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/model-view.PNG)
 > [Figura 4.3.Vistas Modelos]
 
 
