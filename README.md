@@ -75,7 +75,9 @@ El movimiento es otro ámbito difícil en el mismo por lo cual, en el caso de Pi
 [Figura 2.4. Fluidez de Movimiento]
 
 En el mismo contexto del entretenimiento, además de las películas, está el CGI en videojuegos. Crear videojuegos no es una tarea sencilla, toda la programación y diseño que hay detrás de un buen videojuego no se hace en un solo día, además de que el software y los elementos que se usan en su creación muchas veces no son baratos, o aquellos creados por las compañías no fueron sencillos de crear. A pesar de esto, actualmente casi cualquiera puede hacer un videojuego con las herramientas adecuadas. Estas herramientas se conocen como “Motores de Videojuegos”.
+
 Algunos ejemplos claros de motores de videojuegos en el mercado que podemos rescatar pueden ser:
+
 •	GameMaker Studio: A diferencia de la mayoría de los otros motores de juegos se ha utilizado ampliamente porque no requiere conocimientos de programación para su uso permitiendo crear juegos mucho más fáciles y rápidos que la codificación con lenguajes nativos, aunque tiene versión gratuita para hacer los mejores juegos es recomendable su versión de pago.
 
 ![image]()
@@ -116,7 +118,176 @@ Desde Display, se puede escoger una de entre 5 vistas predeterminadas, que permi
 Estas vistas resultan bastante redundantes, debido a las pobres capacidades de HTML para importar contenidos y secciones sin el uso de frameworks. La estructura de estas vistas es la siguiente:
 
 ```html
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <title>Diamond Engine</title>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-lg-5">
+        <a class="navbar-brand" href="../home.html">Sphere Animation Lab</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <form action="">
+            <label for="colorpicker">Color Picker:</label>
+            <input type="color" id="colorpicker" value="#0000ff" />
+          </form>
+        </div>
+        <div class="col">
+          <button
+            onclick="incr()"
+            type="button"
+            class="btn btn-labeled btn-danger"
+          >
+            <span class="btn-label"
+              ><i class="fa fa-search-plus"></i>Zoom In</span
+            >
+          </button>
+        </div>
+        <div class="col">
+          <button
+            onclick="decr()"
+            type="button"
+            class="btn btn-labeled btn-danger"
+          >
+            <span class="btn-label"
+              ><i class="fa fa-search-minus"></i>Zoom Out</span
+            >
+          </button>
+        </div>
+        <div class="col">
+          <button
+            id="choice"
+            onclick="program()"
+            type="button"
+            class="btn btn-labeled btn-success"
+          >
+            <span class="btn-label"><i class="fa fa-check"></i></span>Show (No
+            animation)
+          </button>
+        </div>
+        <div class="col">
+          <button
+            id="choice"
+            onclick="local_export()"
+            type="button"
+            class="btn btn-labeled btn-warning"
+          >
+            <span class="btn-label"><i class="fa fa-download"></i></span>Download
+          </button>
+        </div>
+        </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="card" style="width: 9rem">
+              <img
+                src="../../img/icons/cube.svg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Bounce</h5>
+                <p class="card-text">Make the sphere bounce up and down</p>
+                <a onclick="local_bounceAnimate();" class="btn btn-primary"
+                  >Animate!</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="../../js/three.js"></script>
+    <script src="../../js/OrbitControls.js"></script>
+    <script src="../../js/GLTFExporter.js"></script>
+    <script src="../create.js"></script>
+    <script src="../animation.js"></script>
+    <script src="../choice.js"></script>
+    <script>
+      var pos = 5;
+      function local_export(){
+        exportAnimation()
+      }
+      function incr() {
+        pos -= 0.1;
+        program();
+      }
+      function decr() {
+        pos += 0.1;
+        program();
+        justShow();
+      }
+      function program() {
+        colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
+        setColor(colour);
+        setPos(pos);
+        choose("1");
+        justShow();
+      }
+      function local_bounceAnimate() {
+        colour = document.getElementById("colorpicker").value;
+        setBackground('/img/bg/space.jpg')
+        setColor(colour);
+        setPos(pos);
+        choose("1");
+        bounceAnimate();
+      }
+    </script>
+    
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; Diamond Engine 2022
+        </p>
+        </div>>
+      </div>
+    </footer>
+  </body>
+</html>
 ```
 
 En ellas, varían el modelo geométrico a ser creado y las animaciones disponibles. Antes de crear un objeto, la vista general del motor sería la siguiente:
@@ -148,34 +319,97 @@ Allí, se tienen las siguientes opciones:
 ![image]()
 [Figura 4.8. Download]
 
-Desde lo más interno, se tomó como base la biblioteca three.js, con las bibliotecas Open Source OrbitControls.js, para controlar el ángulo de la cámara desde el mouse y GLTFExporter.js, para permitir la descarga de escenas creadas.
-Así, la elección del usuario desde las vistas acciona funciones desde choice.js, encargado de generar el objeto adecuado dependiendo de la selección del usuario. Este, cuenta con la siguiente estructura:
+Desde lo más interno, se tomó como base la biblioteca [three.js](), con las bibliotecas Open Source [OrbitControls.js](), para controlar el ángulo de la cámara desde el mouse y [GLTFExporter.js](), para permitir la descarga de escenas creadas.
+Así, la elección del usuario desde las vistas acciona funciones desde [choice.js](), encargado de generar el objeto adecuado dependiendo de la selección del usuario. Este, cuenta con la siguiente estructura:
 ```javascript
-
+function choose(shapeChoice){
+    switch (shapeChoice) {
+        case '0':
+            while(scene.children.length > 0){ 
+                scene.remove(scene.children[0]); 
+            }
+            setScene()
+            object = makeCube(objectColour)
+            addScene(object,objectPos)
+            break;
+            .
+            .
+            .
+    }
+}
 ``` 
 Esto, sigue la misma lógica para cada selección posible, en la que el usuario escoge un objeto, su color y su posición relativa a la cámara. Cada vez que el usuario cambia su algún parámetro, la escena debe ser eliminada para evitar superposiciones y se añade el nuevo objeto con los parámetros establecidos a la escena a través del método addScene().
 
 Entonces, pasamos al archivo create.js, el cual, tal y como indica su nombre, trata de crear objetos dentro de la escena, con los parámetros escogidos por el usuario. La mayoría de estos, están fuertemente basados en la documentación de three.js, recuperada de: 
 Una función ‘make’ cualquiera cuenta con la siguiente estructura:
 ```javascript
+function makeCube(colour) {
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshToonMaterial({ color: colour });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.y = 1
+    makeFloor();
 
+    return cube
+}
 ``` 
 Al gestionar la geometría del objeto, se crea un ‘suelo’ para darle perspectiva al usuario y se retorna el objeto a choice para continuar con el proceso de muestra en pantalla.
 ```javascript
+function makeFloor(){
+    
+    base=new THREE.BoxGeometry(1, 0.1, 1),
+    whiteTile= new THREE.MeshPhongMaterial({ color: 0x000000, shininess: 150 }),
+    blackTile=new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 150 }),
+
+    floor = new THREE.Group()
+    var cube
+    for(let x = -8; x < 8; x++){
+        for(let z = -8; z < 8; z++){
+            if(z%2==false){
+                if(x%2==false){
+                    cube=new THREE.Mesh(base,whiteTile)
+                }
+                else {cube=new THREE.Mesh(base, blackTile);}
+            }else{
+                if(x%2==false){
+                    cube=new THREE.Mesh(base,blackTile)
+                }
+                else {cube=new THREE.Mesh(base, whiteTile);}
+            }
+            cube.position.set(x,0,z);
+            floor.add(cube)
+        }
+    }
+
+    scene.add(floor);
+}
 
 ``` 
 En la función makefloor, se hace un suelo con el suficiente contraste como para que el usuario pueda observar correctamente la iluminación, cambio de tamaño y movimiento del objeto con respecto a la cámara. Para ello, se tienen dos cubos, negro y blanco, que formaran las ‘baldozas’ intercaladas de acuerdo con la función mostrada. Posteriormente, se añade el suelo a la escena.
+
 La función addScene() fue concebida con el propósito de tener más control sobre cuándo puede un objeto unirse a la escena, para así favorecer aspectos como el control y la escalabilidad de la aplicación.
 ```javascript
-
+function addScene(object, pos) {
+    scene.add(object);
+    camera.position.z = pos;
+    return object
+}
 ``` 
+
 Tal y como puede verse en el extracto de código anterior, esta función se encarga de recibir cada objeto y agregarlo a la escena actual, además de controlar su posición relativa.
 Finalmente, se llega al apartado de animaciones, desde donde se cambia la posición de un objeto repetidamente y se lleva a la función de three.js requestAnimationFrame(), para crear recursivamente la ilusión de movimiento. Un ejemplo bastante sencillo podría ser:
 ```javascript
+function rotationXAnimate() {
+    requestAnimationFrame(rotationXAnimate);
 
+    object.rotation.x += rotateX;
+    renderer.render(scene, camera);
+
+};
 ``` 
 En este, se rota el objeto sobre el eje X, según un valor variable para que, en un futuro, puedan añadirse cambios en la velocidad, luego, la función es utilizada como parámetro por requestAnimationFrame().
-Luego, puede exportarse el trabajo creado por el usuario, por medio de la función exportAnimation(), basada fuertemente en soluciones al mismo problema discutidas en foros de three.js. (https://discourse.threejs.org/t/exporting-an-animated-gltf-using-gltfexporter/29567)
+Luego, puede exportarse el trabajo creado por el usuario, por medio de la función exportAnimation(), basada fuertemente en soluciones al mismo problema discutidas en foros de three.js. 
+> (https://discourse.threejs.org/t/exporting-an-animated-gltf-using-gltfexporter/29567)
 
  
 ## COMPARACIÓN
