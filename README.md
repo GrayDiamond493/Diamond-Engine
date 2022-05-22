@@ -47,7 +47,7 @@ Luego de este estudio, el autor pudo concluir que, solo en la industria del cine
 
 
  
-ESTADO DEL ARTE
+## ESTADO DEL ARTE
 
 En el mercado, encontramos distintas soluciones a la aplicación del CGI en distintos sectores. En el área de mecánica de fluidos, de especial importancia para la ingeniería, ya que permite el movimiento de fluidos (por ejemplo, a través de tuberías), lograr una simulación no es fácil y, aunque existen distintos programas y aplicaciones que permiten realizar esta simulación, estos son bastante costosos, siendo incluso una licencia individual para acceder a un buen sistema profesional muy valiosa de adquirir.
 
@@ -94,7 +94,7 @@ Algunos ejemplos claros de motores de videojuegos en el mercado que podemos resc
 > [Figura 2.7. Godot]
 
  
-SOLUCIÓN PROPUESTA
+## SOLUCIÓN PROPUESTA
 
 Tal y como pudimos ver anteriormente, el CGI no es para nada sencillo, ni barato. Si tomamos como ejemplo cotidiano el cine, una película promedio de Marvel cuesta entre 100 y 200 millones de dólares para su producción. Con tales cifras, ninguna persona del común se atrevería a intentar implementar CGI de calidad para una obra independiente.
 Además de los precios, nos vemos en la necesidad de hacer especial énfasis en la curva de aprendizaje que varias de las soluciones aquí expuestas presentan. Muchas necesitan de varias horas de estudio solo para ser utilizadas, lo cual resulta sumamente frustrante para artistas o cualquier persona que desee incursionar en el mundo del CGI sin conocimientos previos. Para ello, se plantea la creación de una interfaz amigable con el usuario, menús pequeños y con íconos que faciliten su entendimiento, para la creación de imágenes tridimensionales simples que, aunque no se comparen con las de grandes estudios con presupuestos millonarios, brindarían una introducción amigable a este mundo.
