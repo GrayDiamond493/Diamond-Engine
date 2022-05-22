@@ -61,7 +61,7 @@ Una de las soluciones encontradas en el mercado podría ser OpenFOAM, una soluci
 
 Luego, encontramos uno de los sectores más productivos en materia de CGI: el del entretenimiento. Varios estudios, como el realizado en junio de 2021 por Grand View Research, han confirmado que al menos un tercio del uso de CGI se destina a productos mediáticos y de entretenimiento. Gráficamente:
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/GVR.png)
 > [Figura 2.2. Uso de CGI]
 
 En este punto, se da a conocer una necesidad latente: conseguir un realismo de la animación y los efectos CGI en las películas es muy complicado y requiere de una enorme inversión económica, debido a todo el detalle que se debe tener en cuenta. Hay mucho a lograr con tal de dar más realismo a una película, cosas tan simples como el cabello o lograr la fluidez de la animación no son tareas fáciles para los productores. En este frente, Disney y Pixar son algunos de los mejores exponentes.
@@ -80,17 +80,17 @@ Algunos ejemplos claros de motores de videojuegos en el mercado que podemos resc
 
 •	GameMaker Studio: A diferencia de la mayoría de los otros motores de juegos se ha utilizado ampliamente porque no requiere conocimientos de programación para su uso permitiendo crear juegos mucho más fáciles y rápidos que la codificación con lenguajes nativos, aunque tiene versión gratuita para hacer los mejores juegos es recomendable su versión de pago.
 
-![image]()
+![image](https://www.researchgate.net/profile/Shah-Rizone/publication/313806204/figure/fig6/AS:748135232073729@1555380747875/GameMaker-Studio-Interface-6-Arduino-Software-Serial-The-Arduino-Software-Serial-is-a.jpg)
 > [Figura 2.5. GameMaker]
 
 •	Unity: Permite crear contenido 3D interactivo con facilidad. Una gran cantidad de desarrolladores independientes utilizan Unity por su excelente funcionalidad, contenido de alta calidad y su capacidad para prácticamente cualquier tipo de juego, teniendo una edición personal gratis y otra profesión con más opciones.
 
-![image]()
+![image](https://unity3d.com/profiles/unity3d/themes/unity/images/unity/beta/alpha-beta/2022.1b.jpg)
 > [Figura 2.6. Unity]
 
 •	-Godot: Es de uso gratuito y de código abierto a través de la licencia MIT, que permite exportar videojuegos tanto en 2D como 3D a PC, teléfonos móviles, e incluso despliegues web en formato HTML5.
 
-![image]()
+![image](https://tomatesasesinos.com/wp-content/uploads/2017/07/godot3.jpg)
 > [Figura 2.7. Godot]
 
  
@@ -101,7 +101,7 @@ Además de los precios, nos vemos en la necesidad de hacer especial énfasis en 
 Entonces, la solución planteada por el equipo es una aplicación que permita la creación de imágenes compuestas a través de formas básicas (cubos, esferas…) sin necesidad de ningún conocimiento matemático o computacional previo, solo se necesita una idea a la que se desee dar vida. Para ello, se decidió crear un motor gráfico como los vistos en clase, que le permita al usuario, por medio de menús, insertar distintos objetos y ensamblarlos para crear una imagen que, posteriormente, pueda ser descargada.
 Es sumamente necesario aclarar que, por motivos como el tiempo y el recurso humano disponible para el proyecto, no consideramos que la creación de imágenes como escenarios complejos o imágenes fotorrealistas estén dentro de nuestro alcance. Como equipo, queremos concentrarnos, al menos en lo que respecta a la materia de computación gráfica, en brindar una solución simple para la creación de objetos y personajes geométricamente sencillos.
 
-![image]()
+![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/alance.png)
 > [Figura 3.1. Alcance]
 
 Más a profundidad, se ha decidido desarrollar una aplicación de arquitectura monolítica desarrollada en JavaScript, con vistas en HTML, apoyadas por plantillas de Bootstrap 5.
