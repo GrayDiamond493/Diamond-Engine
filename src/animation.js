@@ -147,7 +147,7 @@ function mobius(startTime) {
             lastframe = renderer.info.render.frame;
             console.log( lastframe );
             capture.start();
-            console.log("emepzo la captura")
+            console.log("Empieza la captura")
             empezar = null;
         } 
         const currentTime = Date.now();

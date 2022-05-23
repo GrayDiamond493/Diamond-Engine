@@ -467,7 +467,7 @@ Además, permite exportar el trabajo creado y descargarlo en un formato incluso 
 ![image](https://github.com/GrayDiamond493/Diamond-Engine/blob/main/Documentation/img/windows-viewer.PNG)
 > [figura 5.1. Modelo en Windows]
 
-Todo esto, marca una diferencia con lo que ya se ha implementado en el mercado. Lo cual, como hemos visto anteriormente, resulta costoso, al tener que invertir no solo en licencias, sino también en calificación y enfrentar la curva de aprendizaje que, en su mayoría, es bastante pronunciada. Asimismo, cabe destacar la necesidad de instalación y el enorme uso de poder computacional, al no todo el mundo poseer los recursos tecnológicos necesarios para crear y animar imágenes tridimensionales. Este problema desaparece al tener una solución Web, pues es el navegador quien se encarga de ello.
+Todo esto, marca una diferencia con lo que ya se ha implementado en el mercado. Lo cual, como hemos visto anteriormente, resulta costoso, al tener que invertir no solo en licencias, sino también en calificación y enfrentar la curva de aprendizaje que, en su mayoría, es bastante pronunciada. Asimismo, cabe destacar la necesidad de instalación y el enorme uso de poder computacional, al no todo el mundo poseer los recursos tecnológicos necesarios para crear y animar imágenes tridimensionales. Este problema desaparece al tener una solución Web, pues es el navegador quien se encarga de ello. Aunado a esto, se ha añadido una función que permite exportar las animaciones creadas como videos.
 
 Por ejemplo, una pantalla cualquiera de la aplicación funcionando correctamente podría ser al crear un cubo, agregarle color y darle una animación de rebote más rotación lateral.
 
